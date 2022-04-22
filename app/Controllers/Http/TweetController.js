@@ -20,7 +20,7 @@ class TweetController {
    * @param {View} ctx.view
    */
   async index () { //Primeira função a ser executada
-    const tweets = await Tweet.all() //Retorna todos os tweets para a variavel tweets
+    const tweets = await Tweet.query().with('user').fetch() //buscar na tabela dos tweets o relacionamento com o nome "user"
     return tweets
   }
 
