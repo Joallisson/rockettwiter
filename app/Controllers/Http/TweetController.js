@@ -34,7 +34,7 @@ class TweetController {
    */
   async store ({ request, auth}) {
     const data = request.only(['content']) //pegando o conteudo da do tweet pela requisição
-    const tweet = Tweet.create({user_id: auth.user.id, ...data}) //criando otweet e armazenando ele
+    const tweet = Tweet.create({user_id: auth.user.id, ...data}) //criando o tweet e armazenando ele
     return tweet
   }
 
